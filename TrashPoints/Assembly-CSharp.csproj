@@ -53,12 +53,19 @@
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\MenuNavigation.cs" />
-    <Compile Include="Assets\ShowRulesInLevel.cs" />
-    <Compile Include="Assets\PopupControl.cs" />
-    <Compile Include="Assets\SelectLevelButton.cs" />
-    <Compile Include="Assets\SelectLevelController.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\PopupControl.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Object Scripts\TrashSpawn.cs" />
+    <Compile Include="Assets\Scripts\Save System\SaveScoreEndLevel.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\SelectLevelController.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\TrashInstanceScript.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Object Scripts\TrashItem.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\MenuNavigation.cs" />
+    <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\SelectLevelButton.cs" />
+    <Compile Include="Assets\Scripts\Save System\MenuLoadScores.cs" />
+    <Compile Include="Assets\Scripts\Save System\SaveInfo.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\ShowRulesInLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
