@@ -45,8 +45,8 @@ public class LevelController : MonoBehaviour
 
     private SaveScoreEndLevel saver;
 
-    private Color32 correctColor = new Color32(0, 180, 25, 255);
-    private Color32 wrongColor = new Color32(180, 0, 0, 255);
+    private Color32 correctColor = new Color32(85, 197, 149, 255);
+    private Color32 wrongColor = new Color32(197, 85, 85, 255);
 
     private List<TrashItem> listTrashCollected = new List<TrashItem>();
 
