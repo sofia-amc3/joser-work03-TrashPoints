@@ -40,4 +40,8 @@ public class MenuNavigation : MonoBehaviour
         }
     }
     
+    public void LeaveGame()
+    {
+        Application.Quit();
+    }
 }

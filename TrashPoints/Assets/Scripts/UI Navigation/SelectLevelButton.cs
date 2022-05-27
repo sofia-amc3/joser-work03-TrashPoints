@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SelectLevelButton : MonoBehaviour
 {
-    public GameObject border;
     private SelectLevelController controller;
 
     private void Start()
@@ -14,12 +13,6 @@ public class SelectLevelButton : MonoBehaviour
 
     public void SelectLevel(int index)
     {
-        border.SetActive(true);
         controller.SetSelectedLevelIndex(index);
-    }
-
-    public void DeselectLevel()
-    {
-        border.SetActive(false);
     }
 }

@@ -96,6 +96,11 @@ public class LevelController : MonoBehaviour
         return score;
     }
 
+    public List<TrashSpawn> GetTrashSpawnsRemaining()
+    {
+        return trashSpawnsHints;
+    }
+
     public void LeaveLevel()
     {
         FindObjectOfType<MenuLoadScores>(true).LoadAndFixData();

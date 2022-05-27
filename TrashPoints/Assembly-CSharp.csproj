@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Save System\MenuLoadScores.cs" />
     <Compile Include="Assets\Scripts\Save System\SaveInfo.cs" />
     <Compile Include="Assets\Scripts\UI Navigation\ShowRulesInLevel.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\TrashTooltip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

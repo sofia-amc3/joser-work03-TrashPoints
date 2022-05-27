@@ -12,33 +12,57 @@ public class MenuLoadScores : MonoBehaviour
     public List<GameObject> lockIcons = new List<GameObject>();
     public List<GameObject> passedIcons = new List<GameObject>();
     public List<Button> levelButtons = new List<Button>();
+    public List<Text> levelLabels = new List<Text>();
+    public List<Image> levelPreviews = new List<Image>();
+    private SelectLevelController selectLevelController;
 
-    void Awake()
+    private void OnEnable()
     {
+        selectLevelController = FindObjectOfType<SelectLevelController>(true);
         savePath = Application.persistentDataPath + "/scores.save";
         LoadAndFixData();
     }
 
-    private void DisplayInfo()
+    private int FindNewestLevelPage()
     {
-        bool unlockedLevelFound = false;
+        int i = 0;
+        while (loadedMaxScores[i] != -1)
+        {
+            i++;
+        }
+        return Mathf.Max(Mathf.CeilToInt((float)i / 4) - 1, 0);
+    }
+
+    private int FindNewestLevelIndex()
+    {
+        int i = 0;
+        while (loadedMaxScores[i] != -1)
+        {
+            i++;
+        }
+        return i % 4;
+    }
+
+    public void DisplayInfo(int page)
+    {
+        int newestLevelIndex = FindNewestLevelIndex();
+        int newestLevelPageIndex = FindNewestLevelPage();
         for (int i = 0; i < scoreTexts.Count; i++)
         {
-            if (loadedMaxScores[i] == -1)
+            if (loadedMaxScores[i + page * 4] == -1)
             {
-                if (unlockedLevelFound)
-                {
-                    lockIcons[i].SetActive(true);
-                    passedIcons[i].SetActive(false);
-                    levelButtons[i].interactable = false;
-                    scoreTexts[i].text = "Locked";
-                } else
+                if (i == newestLevelIndex && page == newestLevelPageIndex)
                 {
                     lockIcons[i].SetActive(false);
                     passedIcons[i].SetActive(false);
                     levelButtons[i].interactable = true;
                     scoreTexts[i].text = "Score: N/A";
-                    unlockedLevelFound = true;
+                } else
+                {
+                    lockIcons[i].SetActive(true);
+                    passedIcons[i].SetActive(false);
+                    levelButtons[i].interactable = false;
+                    scoreTexts[i].text = "Locked";
                 }
             }
             else
@@ -46,8 +70,32 @@ public class MenuLoadScores : MonoBehaviour
                 lockIcons[i].SetActive(false);
                 passedIcons[i].SetActive(true);
                 levelButtons[i].interactable = true;
-                scoreTexts[i].text = "Score: " + loadedMaxScores[i];
+                scoreTexts[i].text = "Score: " + loadedMaxScores[i + page * 4];
             }
+            levelLabels[i].text = "Level " + ConvertToLevelLabel(i + page * 4);
+            if (Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4)) != null)
+            {
+                levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4));
+                levelPreviews[i].color = Color.white;
+            }
+            else
+            {
+                levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/NoPreview");
+                levelPreviews[i].color = Color.black;
+            }
+        }
+    }
+
+    private string ConvertToLevelLabel(int index)
+    {
+        int levelIndex = index + 1;
+        if (levelIndex < 10)
+        {
+            return "0" + levelIndex;
+        }
+        else
+        {
+            return levelIndex.ToString();
         }
     }
 
@@ -134,6 +182,11 @@ public class MenuLoadScores : MonoBehaviour
 
             loadedMaxScores = saveData;
         }
-        DisplayInfo();
+
+        int latestPage = FindNewestLevelPage();
+
+        DisplayInfo(latestPage);
+        selectLevelController.GoToPage(latestPage);
+        selectLevelController.SetSelectedLevelIndex(FindNewestLevelIndex());
     }
 }
