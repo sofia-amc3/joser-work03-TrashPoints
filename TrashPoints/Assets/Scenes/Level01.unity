@@ -3101,7 +3101,7 @@ MonoBehaviour:
   - {fileID: 550576123}
   - {fileID: 336402092}
   bonusScoreTimeLimitSeconds: 120
-  levelSuccessScoreThreshold: 200
+  levelSuccessScoreThreshold: 0
   levelSaveIndex: 0
   scoreTextPhase1: {fileID: 2041834922}
   trashCounterTextPhase1: {fileID: 1924958678}

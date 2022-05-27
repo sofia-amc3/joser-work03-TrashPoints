@@ -30,7 +30,7 @@ public class SaveScoreEndLevel : MonoBehaviour
             loadedMaxScores = loadedSave.MaxScores;
         }
 
-        if (levelController.Score() > loadedMaxScores[levelController.levelSaveIndex] || loadedMaxScores[levelController.levelSaveIndex] == -1) // If -1, level has never been played
+        if ((levelController.Score() > loadedMaxScores[levelController.levelSaveIndex] || loadedMaxScores[levelController.levelSaveIndex] == -1) && levelController.Score() >= levelController.levelSuccessScoreThreshold) // If -1, level has never been played
         {
             loadedMaxScores[levelController.levelSaveIndex] = levelController.Score();
             var save = new SaveInfo()
