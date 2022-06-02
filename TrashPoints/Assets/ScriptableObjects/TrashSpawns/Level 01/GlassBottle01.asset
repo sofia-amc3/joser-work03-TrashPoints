@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968b58ab6779da48aa7bc665ef4e936, type: 3}
   m_Name: GlassBottle01
   m_EditorClassIdentifier: 
-  trashItem: {fileID: 11400000, guid: 33e919cb1c52de8499e70c90acb5787d, type: 2}
-  x: -690
-  y: -71
-  rotation: 97
-  scale: 1
-  layerIndexInScene: 5
-  hintText: Look around the trailer.
+  trashItem: {fileID: 11400000, guid: f0bbdacef98a90648a66c141339e7c14, type: 2}
+  x: 639.8
+  y: -108.4
+  rotation: 91
+  scale: 0.8
+  layerIndexInScene: 3
+  hintText: Behind someone.

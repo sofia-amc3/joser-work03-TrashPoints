@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1968b58ab6779da48aa7bc665ef4e936, type: 3}
-  m_Name: RottenApple01
+  m_Name: GlassBottle02
   m_EditorClassIdentifier: 
-  trashItem: {fileID: 11400000, guid: 2c7a99927e0d65848a426cd9b97ebbec, type: 2}
-  x: -782
-  y: -449
-  rotation: 75
+  trashItem: {fileID: 11400000, guid: 33e919cb1c52de8499e70c90acb5787d, type: 2}
+  x: -690
+  y: -71
+  rotation: 97
   scale: 1
-  layerIndexInScene: 8
-  hintText: Somewhere in the grass.
+  layerIndexInScene: 5
+  hintText: Look around the trailer.

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1968b58ab6779da48aa7bc665ef4e936, type: 3}
-  m_Name: Toaster01
+  m_Name: PlasticBag02
   m_EditorClassIdentifier: 
-  trashItem: {fileID: 11400000, guid: e00b7c156f22aa8458e89330b22cba7c, type: 2}
-  x: -353
-  y: -238
+  trashItem: {fileID: 11400000, guid: 5aafaacfddcd4d84595794cffc0560c3, type: 2}
+  x: 65
+  y: -36
   rotation: 0
-  scale: 1
-  layerIndexInScene: 5
-  hintText: Look around the trailer.
+  scale: 0.6
+  layerIndexInScene: 1
+  hintText: Somewhere in the distance.

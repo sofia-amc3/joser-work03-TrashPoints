@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1968b58ab6779da48aa7bc665ef4e936, type: 3}
-  m_Name: FishBones01
+  m_Name: Donut01
   m_EditorClassIdentifier: 
-  trashItem: {fileID: 11400000, guid: e98859338cf5c14409fb03f53200c942, type: 2}
-  x: 472
-  y: -2
-  rotation: -9.4
-  scale: 1
-  layerIndexInScene: 2
-  hintText: Somewhere in the distance.
+  trashItem: {fileID: 11400000, guid: 71ba8fef97585e74a96a8479d29b5ecb, type: 2}
+  x: -661.6
+  y: -377.6
+  rotation: 0
+  scale: 0.4
+  layerIndexInScene: 3
+  hintText: Behind something.

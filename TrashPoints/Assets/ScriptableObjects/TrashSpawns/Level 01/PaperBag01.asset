@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PaperBag01
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: d0a81f42d569558429af429c480605ce, type: 2}
-  x: 251
-  y: 13
+  x: 634.9
+  y: -56.1
   rotation: 0
-  scale: 1
-  layerIndexInScene: 4
-  hintText: Near the red car.
+  scale: 0.5
+  layerIndexInScene: 3
+  hintText: Behind someone.

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Can01
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: 13aecd21b5781544dad529da0e1a9719, type: 2}
-  x: -326
-  y: -437
+  x: 443.1
+  y: 143.7
   rotation: 0
-  scale: 1
-  layerIndexInScene: 7
-  hintText: Somewhere in the grass.
+  scale: 0.6
+  layerIndexInScene: 3
+  hintText: Behind something.

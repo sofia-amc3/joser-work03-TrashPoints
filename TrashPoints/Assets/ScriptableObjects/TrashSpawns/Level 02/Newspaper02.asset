@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1968b58ab6779da48aa7bc665ef4e936, type: 3}
-  m_Name: Newspaper01
+  m_Name: Newspaper02
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: 3b6ac8ec5f9a4004fa59544ec0328228, type: 2}
   x: 847

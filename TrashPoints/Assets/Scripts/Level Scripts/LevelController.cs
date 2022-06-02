@@ -65,7 +65,10 @@ public class LevelController : MonoBehaviour
 
         foreach (var layer in layers)
         {
-            layer.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.01f;
+            foreach (var image in layer.GetComponentsInChildren<Image>())
+            {
+                image.alphaHitTestMinimumThreshold = 0.01f;
+            }
         }
 
         List<TrashSpawn> spawnListCopy = new List<TrashSpawn>(trashSpawns);

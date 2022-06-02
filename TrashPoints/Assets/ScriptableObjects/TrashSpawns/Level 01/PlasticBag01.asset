@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlasticBag01
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: 5aafaacfddcd4d84595794cffc0560c3, type: 2}
-  x: 65
-  y: -36
+  x: 579.7
+  y: -261
   rotation: 0
-  scale: 0.6
-  layerIndexInScene: 1
-  hintText: Somewhere in the distance.
+  scale: 0.7
+  layerIndexInScene: 2
+  hintText: Behind someone.

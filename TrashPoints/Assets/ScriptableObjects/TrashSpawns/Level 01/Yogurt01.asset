@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Yogurt01
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: 8ed0e93a4c00d5b4fb7a2d1faa54f327, type: 2}
-  x: -566
-  y: -464
-  rotation: 180
-  scale: 0.7
-  layerIndexInScene: 7
-  hintText: Somewhere in the grass.
+  x: -657.5
+  y: 133.7
+  rotation: 72
+  scale: 0.6
+  layerIndexInScene: 2
+  hintText: Behind someone.

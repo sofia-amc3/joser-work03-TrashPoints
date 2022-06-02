@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Battery01
   m_EditorClassIdentifier: 
   trashItem: {fileID: 11400000, guid: 9c9cf8d03538e1b498dd9ceb317d6f48, type: 2}
-  x: 350
-  y: -300
-  rotation: 0
-  scale: 0.5
-  layerIndexInScene: 6
-  hintText: Somewhere in the grass.
+  x: 128.3
+  y: -188.1
+  rotation: -113.5
+  scale: 0.6
+  layerIndexInScene: 3
+  hintText: Behind someone.
