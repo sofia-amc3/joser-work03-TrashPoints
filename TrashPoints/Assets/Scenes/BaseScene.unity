@@ -919,6 +919,7 @@ MonoBehaviour:
   - {fileID: 1217229507}
   - {fileID: 1888683586}
   - {fileID: 825007161}
+  - {fileID: 1104054701}
   leftArrow: {fileID: 1728983984}
   rightArrow: {fileID: 632932134}
 --- !u!114 &266596839
@@ -2751,6 +2752,7 @@ GameObject:
   - component: {fileID: 820006143}
   - component: {fileID: 820006142}
   - component: {fileID: 820006144}
+  - component: {fileID: 820006145}
   m_Layer: 5
   m_Name: Level 04 Img
   m_TagString: Untagged
@@ -2859,7 +2861,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794343363}
+      - m_Target: {fileID: 820006145}
         m_TargetAssemblyTypeName: SelectLevelButton, Assembly-CSharp
         m_MethodName: SelectLevel
         m_Mode: 3
@@ -2871,6 +2873,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &820006145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820006140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721eea3920613324cb46261b476d4de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825007161
 GameObject:
   m_ObjectHideFlags: 0

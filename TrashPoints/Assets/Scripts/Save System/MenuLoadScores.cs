@@ -26,9 +26,13 @@ public class MenuLoadScores : MonoBehaviour
     private int FindNewestLevelPage()
     {
         int i = 0;
-        while (loadedMaxScores[i] != -1)
+        while (loadedMaxScores[i] != -1 && i < Constants.NUMBER_OF_LEVELS - 1)
         {
             i++;
+        }
+        if (i == Constants.NUMBER_OF_LEVELS)
+        {
+            return Mathf.Max(Mathf.CeilToInt((Constants.NUMBER_OF_LEVELS - 1) / 4) - 1, 0);
         }
         return Mathf.Max(Mathf.CeilToInt((float)i / 4) - 1, 0);
     }
@@ -36,9 +40,13 @@ public class MenuLoadScores : MonoBehaviour
     private int FindNewestLevelIndex()
     {
         int i = 0;
-        while (loadedMaxScores[i] != -1)
+        while (loadedMaxScores[i] != -1 && i < Constants.NUMBER_OF_LEVELS - 1)
         {
             i++;
+        }
+        if (i == Constants.NUMBER_OF_LEVELS)
+        {
+            return (Constants.NUMBER_OF_LEVELS - 1) % 4;
         }
         return i % 4;
     }
