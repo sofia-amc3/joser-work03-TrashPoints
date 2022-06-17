@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Level Scripts\TrashTooltip.cs" />
     <Compile Include="Assets\Scripts\UI Navigation\PopupControl.cs" />
     <Compile Include="Assets\Scripts\Scriptable Object Scripts\TrashSpawn.cs" />
     <Compile Include="Assets\Scripts\Save System\SaveScoreEndLevel.cs" />
@@ -66,7 +67,8 @@
     <Compile Include="Assets\Scripts\Save System\MenuLoadScores.cs" />
     <Compile Include="Assets\Scripts\Save System\SaveInfo.cs" />
     <Compile Include="Assets\Scripts\UI Navigation\ShowRulesInLevel.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\TrashTooltip.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\SoundToggle.cs" />
+    <Compile Include="Assets\Scripts\UI Navigation\SoundController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -9,5 +9,6 @@ public static class Constants
     public const int BONUS_SCORE_FOR_SECOND_REMAINING = 2;
     public const int SCORE_FOR_CORRECT_TRASH_SEPARATION = 100;
     public const int SCORE_FOR_WRONG_TRASH_SEPARATION = -100;
-    public const int NUMBER_OF_LEVELS = 4;
+    public const int NUMBER_OF_LEVELS = 5;
+    public const float MAX_VOLUME = 0.1f;
 }

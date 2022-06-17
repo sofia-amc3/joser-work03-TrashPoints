@@ -16,7 +16,7 @@ public class SelectLevelController : MonoBehaviour
     private void Start()
     {
         menuLoadScores = FindObjectOfType<MenuLoadScores>(true);
-        maxPageIndex = Mathf.CeilToInt((float)Constants.NUMBER_OF_LEVELS / 4) - 1;
+        maxPageIndex = Mathf.Max(Mathf.FloorToInt((Constants.NUMBER_OF_LEVELS - 1) / 4), 0);
         UpdateButtons();
     }
 
@@ -28,24 +28,27 @@ public class SelectLevelController : MonoBehaviour
 
     public void GoToPage(int index)
     {
+        selectedLevelIndex = 4;
         pageIndex = index;
         UpdateButtons();
     }
 
     public void NextPage()
     {
+        selectedLevelIndex = 4;
+        DeselectAll();
         pageIndex++;
         menuLoadScores.DisplayInfo(pageIndex);
         UpdateButtons();
-        DeselectAll();
     }
 
     public void PreviousPage()
     {
+        selectedLevelIndex = 4;
+        DeselectAll();
         pageIndex--;
         menuLoadScores.DisplayInfo(pageIndex);
         UpdateButtons();
-        DeselectAll();
     }
 
     private void UpdateButtons()
@@ -71,14 +74,17 @@ public class SelectLevelController : MonoBehaviour
 
     public void PlayLevel()
     {
-        int index = selectedLevelIndex + 1 + pageIndex * 4;
-        if (index < 10)
+        if (selectedLevelIndex < 4)
         {
-            SceneManager.LoadScene("Level0" + index, LoadSceneMode.Additive);
-        }
-        else
-        {
-            SceneManager.LoadScene("Level" + index, LoadSceneMode.Additive);
+            int index = selectedLevelIndex + 1 + pageIndex * 4;
+            if (index < 10)
+            {
+                SceneManager.LoadScene("Level0" + index, LoadSceneMode.Additive);
+            }
+            else
+            {
+                SceneManager.LoadScene("Level" + index, LoadSceneMode.Additive);
+            }
         }
     }
 

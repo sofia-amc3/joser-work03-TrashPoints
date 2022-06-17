@@ -23,7 +23,7 @@ public class MenuLoadScores : MonoBehaviour
         LoadAndFixData();
     }
 
-    private int FindNewestLevelPage()
+    public int FindNewestLevelPage()
     {
         int i = 0;
         while (loadedMaxScores[i] != -1 && i < Constants.NUMBER_OF_LEVELS - 1)
@@ -32,12 +32,12 @@ public class MenuLoadScores : MonoBehaviour
         }
         if (i == Constants.NUMBER_OF_LEVELS)
         {
-            return Mathf.Max(Mathf.CeilToInt((Constants.NUMBER_OF_LEVELS - 1) / 4) - 1, 0);
+            return Mathf.Max(Mathf.FloorToInt((Constants.NUMBER_OF_LEVELS - 1) / 4), 0);
         }
-        return Mathf.Max(Mathf.CeilToInt((float)i / 4) - 1, 0);
+        return Mathf.Max(Mathf.FloorToInt((float)i / 4), 0);
     }
 
-    private int FindNewestLevelIndex()
+    public int FindNewestLevelIndex()
     {
         int i = 0;
         while (loadedMaxScores[i] != -1 && i < Constants.NUMBER_OF_LEVELS - 1)
@@ -57,39 +57,55 @@ public class MenuLoadScores : MonoBehaviour
         int newestLevelPageIndex = FindNewestLevelPage();
         for (int i = 0; i < scoreTexts.Count; i++)
         {
-            if (loadedMaxScores[i + page * 4] == -1)
+            if (i + page * 4 < Constants.NUMBER_OF_LEVELS) // There is a level
             {
-                if (i == newestLevelIndex && page == newestLevelPageIndex)
+                levelButtons[i].gameObject.SetActive(true);
+                scoreTexts[i].gameObject.SetActive(true);
+                levelLabels[i].gameObject.SetActive(true);
+                if (loadedMaxScores[i + page * 4] == -1)
+                {
+                    if (i == newestLevelIndex && page == newestLevelPageIndex)
+                    {
+                        lockIcons[i].SetActive(false);
+                        passedIcons[i].SetActive(false);
+                        levelButtons[i].interactable = true;
+                        scoreTexts[i].text = "Score: N/A";
+                        selectLevelController.SetSelectedLevelIndex(newestLevelIndex);
+                    }
+                    else
+                    {
+                        lockIcons[i].SetActive(true);
+                        passedIcons[i].SetActive(false);
+                        levelButtons[i].interactable = false;
+                        scoreTexts[i].text = "Locked";
+                    }
+                }
+                else
                 {
                     lockIcons[i].SetActive(false);
-                    passedIcons[i].SetActive(false);
+                    passedIcons[i].SetActive(true);
                     levelButtons[i].interactable = true;
-                    scoreTexts[i].text = "Score: N/A";
-                } else
+                    scoreTexts[i].text = "Score: " + loadedMaxScores[i + page * 4];
+                }
+                levelLabels[i].text = "Level " + ConvertToLevelLabel(i + page * 4);
+                if (Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4)) != null)
                 {
-                    lockIcons[i].SetActive(true);
-                    passedIcons[i].SetActive(false);
-                    levelButtons[i].interactable = false;
-                    scoreTexts[i].text = "Locked";
+                    levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4));
+                    levelPreviews[i].color = Color.white;
+                }
+                else
+                {
+                    levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/NoPreview");
+                    levelPreviews[i].color = Color.black;
                 }
             }
-            else
+            else // There is no level
             {
+                levelButtons[i].gameObject.SetActive(false);
+                scoreTexts[i].gameObject.SetActive(false);
+                levelLabels[i].gameObject.SetActive(false);
                 lockIcons[i].SetActive(false);
-                passedIcons[i].SetActive(true);
-                levelButtons[i].interactable = true;
-                scoreTexts[i].text = "Score: " + loadedMaxScores[i + page * 4];
-            }
-            levelLabels[i].text = "Level " + ConvertToLevelLabel(i + page * 4);
-            if (Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4)) != null)
-            {
-                levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/LevelIcon" + ConvertToLevelLabel(i + page * 4));
-                levelPreviews[i].color = Color.white;
-            }
-            else
-            {
-                levelPreviews[i].sprite = Resources.Load<Sprite>("LevelIcons/NoPreview");
-                levelPreviews[i].color = Color.black;
+                passedIcons[i].SetActive(false);
             }
         }
     }
