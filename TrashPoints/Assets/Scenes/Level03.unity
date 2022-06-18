@@ -8621,7 +8621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: Level 01
+  m_Text: Level 03
 --- !u!222 &1511580414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9123,7 +9123,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: Level 01
+  m_Text: Level 03
 --- !u!222 &1611051778
 CanvasRenderer:
   m_ObjectHideFlags: 0
