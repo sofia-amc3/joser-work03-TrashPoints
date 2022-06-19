@@ -21,11 +21,14 @@ public class TrashInstanceScript : MonoBehaviour
 
     public void ClickFindTrash()
     {
-        found = true;
-        Destroy(gameObject, 1);
+        if (!found)
+        {
+            found = true;
+            Destroy(gameObject, 1);
 
-        levelController.UpdateScore(Constants.SCORE_FOR_CORRECT_CLICK);
-        levelController.FoundTrash(trashItem);
+            levelController.UpdateScore(Constants.SCORE_FOR_CORRECT_CLICK);
+            levelController.FoundTrash(trashItem);
+        }
     }
 
     void Update()

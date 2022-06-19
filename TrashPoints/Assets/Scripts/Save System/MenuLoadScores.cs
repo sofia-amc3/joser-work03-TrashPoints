@@ -70,7 +70,6 @@ public class MenuLoadScores : MonoBehaviour
                         passedIcons[i].SetActive(false);
                         levelButtons[i].interactable = true;
                         scoreTexts[i].text = "Score: N/A";
-                        selectLevelController.SetSelectedLevelIndex(newestLevelIndex);
                     }
                     else
                     {
@@ -107,6 +106,14 @@ public class MenuLoadScores : MonoBehaviour
                 lockIcons[i].SetActive(false);
                 passedIcons[i].SetActive(false);
             }
+        }
+        if (page < newestLevelPageIndex)
+        {
+            selectLevelController.SetSelectedLevelIndex(3);
+        }
+        else if (page == newestLevelPageIndex)
+        {
+            selectLevelController.SetSelectedLevelIndex(newestLevelIndex);
         }
     }
 

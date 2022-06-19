@@ -55,6 +55,7 @@ public class LevelController : MonoBehaviour
     // Run when scene is loaded
     private void Start()
     {
+        scoreTextPhase1.text = "Score: 0/" + levelSuccessScoreThreshold;
         saver = FindObjectOfType<SaveScoreEndLevel>();
         timeRemaining = bonusScoreTimeLimitSeconds;
         trashCounterTextPhase1.text = "Trash Counter: 0/" + trashToFind;
@@ -89,8 +90,8 @@ public class LevelController : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreTextPhase1.text = "Score: " + score;
-        scoreTextPhase2.text = "Score: " + score;
+        scoreTextPhase1.text = "Score: " + score + "/" + levelSuccessScoreThreshold;
+        scoreTextPhase2.text = "Score: " + score + "/" + levelSuccessScoreThreshold;
     }
 
     // Used to get score
@@ -282,12 +283,12 @@ public class LevelController : MonoBehaviour
 
         if (score >= levelSuccessScoreThreshold)
         {
-            winScoreText.text = "Score: " + score;
+            winScoreText.text = "Score: " + score + "/" + levelSuccessScoreThreshold;
             winScreen.SetActive(true);
         }
         else
         {
-            loseScoreText.text = "Score: " + score;
+            loseScoreText.text = "Score: " + score + "/" + levelSuccessScoreThreshold;
             loseScreen.SetActive(true);
         }
     }

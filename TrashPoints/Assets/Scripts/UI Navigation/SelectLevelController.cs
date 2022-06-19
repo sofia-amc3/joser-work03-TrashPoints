@@ -28,14 +28,12 @@ public class SelectLevelController : MonoBehaviour
 
     public void GoToPage(int index)
     {
-        selectedLevelIndex = 4;
         pageIndex = index;
         UpdateButtons();
     }
 
     public void NextPage()
     {
-        selectedLevelIndex = 4;
         DeselectAll();
         pageIndex++;
         menuLoadScores.DisplayInfo(pageIndex);
@@ -44,7 +42,6 @@ public class SelectLevelController : MonoBehaviour
 
     public void PreviousPage()
     {
-        selectedLevelIndex = 4;
         DeselectAll();
         pageIndex--;
         menuLoadScores.DisplayInfo(pageIndex);
