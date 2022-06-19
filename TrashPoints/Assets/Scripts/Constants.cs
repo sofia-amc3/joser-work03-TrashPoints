@@ -11,4 +11,5 @@ public static class Constants
     public const int SCORE_FOR_WRONG_TRASH_SEPARATION = -100;
     public const int NUMBER_OF_LEVELS = 5;
     public const float MAX_VOLUME = 0.1f;
+    public const int NUMBER_OF_FREE_HINTS = 2;
 }

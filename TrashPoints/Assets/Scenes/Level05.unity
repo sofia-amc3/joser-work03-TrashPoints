@@ -2710,6 +2710,7 @@ MonoBehaviour:
   hintText: {fileID: 1488278837}
   timeRemainingText: {fileID: 1032238561}
   trashSpawnPrefab: {fileID: 2231646142804679895, guid: 3956575d38884ae4ea63a1623600cf03, type: 3}
+  hintButtonImage: {fileID: 1961745658}
   phase2: {fileID: 946144742}
   scoreTextPhase2: {fileID: 1128073150}
   trashCounterTextPhase2: {fileID: 1364924463}

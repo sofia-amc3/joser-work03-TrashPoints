@@ -21,6 +21,7 @@ public class LevelController : MonoBehaviour
     public Text hintText;
     public Text timeRemainingText;
     public GameObject trashSpawnPrefab;
+    public Image hintButtonImage;
 
     public GameObject phase2;
     public Text scoreTextPhase2;
@@ -40,6 +41,7 @@ public class LevelController : MonoBehaviour
     private int score = 0;
     private int timeRemaining = 0;
     private int bonusTimeScoreObtained = 0;
+    private int freeHintsRemaining = Constants.NUMBER_OF_FREE_HINTS;
 
     private List<TrashSpawn> trashSpawnsHints = new List<TrashSpawn>();
 
@@ -185,10 +187,25 @@ public class LevelController : MonoBehaviour
     // Called when player clicks the hint button
     public void ShowHint()
     {
+        if (freeHintsRemaining > 0)
+        {
+            freeHintsRemaining--;
+            if (freeHintsRemaining == 0)
+            {
+                hintButtonImage.color = wrongColor;
+                hintButtonImage.GetComponentInChildren<Text>().color = wrongColor;
+            }
+        }
+        else
+        {
+            UpdateScore(Constants.SCORE_FOR_WRONG_CLICK);
+        }
+
         int randomNumber = Random.Range(0, trashSpawnsHints.Count);
 
         hintText.text = "HINT: " + trashSpawnsHints[randomNumber].hintText;
         hintText.gameObject.SetActive(true);
+
     }
 
     //------------------------------------------------------------------------------------------ PHASE 2
